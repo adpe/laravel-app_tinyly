@@ -1,7 +1,7 @@
 @extends ('layouts.app')
 
 @section('content')
-    <header class="flex items-center mb-6">
+    <header class="flex items-center mt-6 mb-6">
         <div class="flex justify-between items-end w-full">
             <h2 class="text-2xl">My Links</h2>
         </div>
@@ -42,7 +42,7 @@
             @endif
         </div>
         <div class="bg-gray-50 py-12 px-16 rounded shadow">
-            <table class="table-auto w-full rounded shadow">
+            <table class="table-auto bg-white w-full rounded shadow">
                 <thead>
                 <tr>
                     <th class="bg-gray-100 border text-left px-4 py-2">#</th>
