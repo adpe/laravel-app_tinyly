@@ -14,11 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/', [ShortLinkController::class, 'index']);
+    Route::post('/generate', [ShortLinkController::class, 'store'])->name('generate');
 });
 
-Route::get('/', [ShortLinkController::class, 'index']);
-Route::post('/generate', [ShortLinkController::class, 'store']);
+Auth::routes();
 
 Route::get('/{code}', [ShortLinkController::class, 'resolve']);

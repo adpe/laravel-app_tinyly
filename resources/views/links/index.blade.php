@@ -1,37 +1,53 @@
 @extends ('layouts.app')
 
 @section('content')
-    <header class="flex items-center mt-6 mb-6">
-        <div class="flex justify-between items-end w-full">
-            <h2 class="text-2xl">My Links</h2>
-        </div>
-    </header>
+<main class="sm:mt-10">
+    <section class="flex flex-col break-words bg-white sm:border-1 sm:rounded-md sm:shadow-sm sm:shadow-lg">
 
-    <main class="flex flex-col">
-        <div class="bg-gray-50 mb-6 py-12 px-16 rounded shadow">
-            <form method="POST" action="/generate">
-                @csrf
-                <div class="field mb-6">
-                    <div class="control">
-                        <input type="text" name="link"
-                               class="flex-1 appearance-none border border-transparent w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-md rounded-lg text-base focus:outline-none focus:ring-2 focus:ring-gray-600 focus:border-transparent"
-                               placeholder="Enter URL">
-                    </div>
-                </div>
+        <header class="font-semibold bg-gray-200 text-gray-700 py-5 px-6 sm:py-6 sm:px-8 sm:rounded-t-md">
+            My Links
+        </header>
 
-                <div class="field mb-6">
-                    <input type="text" name="code"
-                           class="flex-1 appearance-none border border-transparent w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-md rounded-lg text-base focus:outline-none focus:ring-2 focus:ring-gray-600 focus:border-transparent"
-                           placeholder="Enter Code">
-                </div>
+        <form class="w-full px-6 space-y-6 sm:px-10 sm:space-y-8" method="POST"
+              action="{{ route('generate') }}">
+            @csrf
 
-                <div class="field">
-                    <button type="submit"
-                            class="flex-shrink-0 bg-gray-600 text-white text-base font-semibold w-full py-2 px-4 rounded-lg shadow-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:ring-offset-gray-200">
-                        Create Link
-                    </button>
-                </div>
-            </form>
+            <div class="flex flex-wrap">
+                <label for="link" class="block text-gray-700 text-sm font-bold mb-2 sm:mb-4">
+                    {{ __('URL') }}:
+                </label>
+
+                <input id="link" type="text" class="form-input w-full @error('link')  border-red-500 @enderror"
+                       name="link" value="{{ old('link') }}" required autocomplete="link" autofocus>
+
+                @error('link')
+                <p class="text-red-500 text-xs italic mt-4">
+                    {{ $message }}
+                </p>
+                @enderror
+            </div>
+
+            <div class="flex flex-wrap">
+                <label for="code" class="block text-gray-700 text-sm font-bold mb-2 sm:mb-4">
+                    {{ __('Code') }}:
+                </label>
+
+                <input id="code" type="text" class="form-input w-full @error('code')  border-red-500 @enderror"
+                       name="code" value="{{ old('code') }}" required autocomplete="code" autofocus>
+
+                @error('code')
+                <p class="text-red-500 text-xs italic mt-4">
+                    {{ $message }}
+                </p>
+                @enderror
+            </div>
+
+            <div class="flex flex-wrap">
+                <button type="submit"
+                        class="w-full select-none font-bold whitespace-no-wrap p-3 rounded-lg text-base leading-normal no-underline text-gray-100 bg-purple-500 hover:bg-purple-700 sm:py-4">
+                    Create Link
+                </button>
+            </div>
 
             @if (Session::has('success'))
                 <div class="bg-green-100 border border-green-400 text-green-700 mt-6 px-4 py-3 rounded relative"
@@ -40,9 +56,10 @@
                     <span class="block sm:inline">{{ Session::get('success') }}</span>
                 </div>
             @endif
-        </div>
-        <div class="bg-gray-50 py-12 px-16 rounded shadow">
-            <table class="table-auto bg-white w-full rounded shadow">
+        </form>
+
+        <div class="px-6 py-6 sm:py-8 space-y-6 sm:px-10 sm:space-y-8">
+            <table class="table-auto bg-white w-full">
                 <thead>
                 <tr>
                     <th class="bg-gray-100 border text-left px-4 py-2">#</th>
@@ -64,5 +81,6 @@
                 </tbody>
             </table>
         </div>
-    </main>
+    </section>
+</main>
 @endsection

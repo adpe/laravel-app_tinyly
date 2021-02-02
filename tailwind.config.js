@@ -1,13 +1,13 @@
 module.exports = {
-  purge: [],
-  darkMode: false, // or 'media' or 'class'
+  purge: [
+    './resources/views/**/*.blade.php',
+    './resources/css/**/*.css',
+  ],
   theme: {
-    extend: {},
+    extend: {}
   },
-  variants: {
-    extend: {
-      tableLayout: ['hover', 'focus'],
-    },
-  },
-  plugins: [],
+  variants: {},
+  plugins: [
+    require('@tailwindcss/ui'),
+  ]
 }

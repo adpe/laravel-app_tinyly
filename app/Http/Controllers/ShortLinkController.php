@@ -27,18 +27,12 @@ class ShortLinkController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'link' => 'required|url'
+        $attributes = $request->validate([
+            'link' => 'required|url',
+            'code' => 'required|unique:short_links',
         ]);
 
-        $input['link'] = $request->link;
-        $input['code'] = $request->code;
-
-        if (!$request->code) {
-            $input['code'] = Str::random(6);
-        }
-
-        ShortLink::create($input);
+        auth()->user()->short_links()->create($attributes);
 
         return redirect('/')->with('success', 'The link was created successfully!');
     }
