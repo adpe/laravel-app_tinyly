@@ -43,6 +43,6 @@ class User extends Authenticatable
 
     public function short_links()
     {
-        return $this->hasMany(ShortLink::class, 'owner_id');
+        return $this->hasMany(ShortLink::class, 'owner_id')->latest('updated_at');
     }
 }

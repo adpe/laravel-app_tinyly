@@ -18,4 +18,14 @@ class ShortLink extends Model
         'code',
         'link'
     ];
+
+    public function path()
+    {
+        return '/links/';
+    }
+
+    public function owner()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

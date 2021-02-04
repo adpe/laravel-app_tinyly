@@ -49,6 +49,24 @@
         @yield('content')
     </main>
 
+    @if (Session::has('success'))
+        <div class="alert-toast fixed bottom-0 right-0 m-8 w-5/6 md:w-full max-w-sm">
+            <input type="checkbox" class="hidden" id="notification">
+
+            <label
+                class="close cursor-pointer flex items-start justify-between w-full p-2 bg-green-500 h-8 rounded shadow-lg text-white"
+                title="close" for="notification">
+                <span class="block sm:inline"><strong class="font-bold">Success!</strong> {{ Session::get('success') }}</span>
+
+                <svg class="fill-current text-white" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                     viewBox="0 0 18 18">
+                    <path
+                        d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+                </svg>
+            </label>
+        </div>
+    @endif
+
     <footer class="container mx-auto py-6">
         <p class="text-center">Made with 🖤 by
             <a class="hover:underline" href="https://adrianperez.me"

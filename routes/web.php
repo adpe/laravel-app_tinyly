@@ -14,9 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', function () {
+    return redirect('/links');
+});
+
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('/', [ShortLinkController::class, 'index']);
-    Route::post('/generate', [ShortLinkController::class, 'store'])->name('generate');
+    Route::get('/links', [ShortLinkController::class, 'index']);
+    Route::post('/links', [ShortLinkController::class, 'store']);
+    Route::get('/links/{link}/delete', [ShortLinkController::class, 'delete']);
 });
 
 Auth::routes();

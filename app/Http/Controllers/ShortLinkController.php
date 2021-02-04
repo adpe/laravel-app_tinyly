@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\ShortLink;
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
+use Illuminate\Support\Facades\DB;
 
 class ShortLinkController extends Controller
 {
@@ -15,7 +15,7 @@ class ShortLinkController extends Controller
      */
     public function index()
     {
-        $shortLinks = ShortLink::latest()->get();
+        $shortLinks = auth()->user()->short_links;
 
         return view('links.index', compact('shortLinks'));
     }
@@ -32,9 +32,9 @@ class ShortLinkController extends Controller
             'code' => 'required|unique:short_links',
         ]);
 
-        auth()->user()->short_links()->create($attributes);
+        $link = auth()->user()->short_links()->create($attributes);
 
-        return redirect('/')->with('success', 'The link was created successfully!');
+        return redirect($link->path())->with('success', 'The link was created successfully!');
     }
 
     /**
@@ -44,8 +44,23 @@ class ShortLinkController extends Controller
      */
     public function resolve($code)
     {
-        $find = ShortLink::where('code', $code)->first();
+        $shortLink = ShortLink::where('code', $code)->first();
 
-        return redirect($find->link);
+        return redirect($shortLink->link);
+    }
+
+    public function delete(ShortLink $link)
+    {
+        if (!auth()->check()) {
+            return redirect('/login');
+        }
+
+        if (auth()->user()->isNot($link->owner)) {
+            abort(403);
+        }
+
+        DB::table('short_links')->where('id', '=', $link->id)->delete();
+
+        return redirect($link->path())->with('success', 'The link was deleted successfully!');
     }
 }
