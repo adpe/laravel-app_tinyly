@@ -9,8 +9,8 @@
             </header>
 
             <div class="px-6 py-6 sm:py-8 space-y-6 sm:px-10 sm:space-y-8">
-                <div class="mb-8 float-right">
-                    <a href="/links/create" class="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">New Link</a>
+                <div class="flex flex-wrap mb-8 float-right">
+                    <a href="/links/create" class="select-none font-bold whitespace-no-wrap p-3 rounded-lg text-base leading-normal no-underline text-gray-100 bg-purple-500 hover:bg-purple-700 sm:py-4">Create Link</a>
                 </div>
 
                 <table class="table-auto bg-white w-full">
