@@ -13,11 +13,16 @@ class ShortLinkController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function show()
     {
         $shortLinks = auth()->user()->short_links;
 
         return view('links.index', compact('shortLinks'));
+    }
+
+    public function create()
+    {
+        return view('links.create');
     }
 
     /**
@@ -61,6 +66,6 @@ class ShortLinkController extends Controller
 
         DB::table('short_links')->where('id', '=', $link->id)->delete();
 
-        return redirect($link->path())->with('success', 'The link was deleted successfully!');
+        return redirect('/links')->with('success', 'The link was deleted successfully!');
     }
 }

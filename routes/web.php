@@ -19,8 +19,9 @@ Route::get('/', function () {
 });
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('/links', [ShortLinkController::class, 'index']);
-    Route::post('/links', [ShortLinkController::class, 'store']);
+    Route::get('/links', [ShortLinkController::class, 'show']);
+    Route::get('/links/create', [ShortLinkController::class, 'create']);
+    Route::post('/links/create', [ShortLinkController::class, 'store']);
     Route::get('/links/{link}/delete', [ShortLinkController::class, 'delete']);
 });
 
