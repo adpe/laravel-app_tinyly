@@ -26,7 +26,7 @@
                         <tr>
                             <td class="border px-4 py-2"><a class="no-underline hover:underline"
                                                             href="{{ $shortLink->code }}"
-                                                            target="_blank">{{ Request::url() . '/' . $shortLink->code }}</a>
+                                                            target="_blank">{{ $shortLink->baseUrl().'/'.$shortLink->code }}</a>
                             </td>
                             <td class="border px-4 py-2">{{ $shortLink->link }}</td>
                             <td class="border px-4 py-2"><a href="{{ $shortLink->path().$shortLink->id.'/delete' }}"
