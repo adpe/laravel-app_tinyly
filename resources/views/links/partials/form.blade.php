@@ -6,7 +6,7 @@
     </label>
 
     <input id="link" type="text" class="form-input w-full @error('link')  border-red-500 @enderror"
-           name="link" value="{{ old('link') }}" required autocomplete="link" autofocus>
+           name="link" value="{{ !empty($link->link) ? $link->link : old('link') }}" required autocomplete="link" autofocus>
 
     @error('link')
     <p class="text-red-500 text-xs italic mt-4">
@@ -21,7 +21,7 @@
     </label>
 
     <input id="code" type="text" class="form-input w-full @error('code')  border-red-500 @enderror"
-           name="code" value="{{ old('code') }}" required autocomplete="code" autofocus>
+           name="code" value="{{ !empty($link->code) ? $link->code : old('code') }}" required autocomplete="code" autofocus>
 
     @error('code')
     <p class="text-red-500 text-xs italic mt-4">

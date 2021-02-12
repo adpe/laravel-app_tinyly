@@ -22,6 +22,11 @@ class ShortLink extends Model
 
     public function path()
     {
+        return '/links/'.$this->id;
+    }
+
+    public function linkspath()
+    {
         return '/links/';
     }
 
