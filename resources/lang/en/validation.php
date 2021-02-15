@@ -135,6 +135,7 @@ return [
             'rule-name' => 'custom-message',
         ],
     ],
+    'reserved' => 'The :attribute is a reserved keyword.',
 
     /*
     |--------------------------------------------------------------------------

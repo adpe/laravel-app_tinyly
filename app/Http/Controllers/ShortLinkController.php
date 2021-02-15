@@ -58,7 +58,9 @@ class ShortLinkController extends Controller
      */
     public function resolve($code)
     {
-        $shortLink = ShortLink::where('code', $code)->first();
+        if (!$shortLink = ShortLink::where('code', $code)->first()) {
+            abort('404');
+        }
 
         return redirect($shortLink->link);
     }
@@ -82,7 +84,7 @@ class ShortLinkController extends Controller
     {
         return request()->validate([
             'link' => 'required|url',
-            'code' => 'required|unique:short_links',
+            'code' => 'required|unique:short_links|reserved',
         ]);
     }
 }

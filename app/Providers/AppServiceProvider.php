@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -23,6 +24,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Validator::extend('reserved', function ($attribute, $value, $parameters, $validator) {
+            $reservedCodes = ['links', 'login', 'register', 'password'];
+
+            return !in_array($value, $reservedCodes);
+        });
     }
 }
