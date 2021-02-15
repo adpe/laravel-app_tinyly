@@ -9,7 +9,7 @@
             </header>
 
             <div class="-mt-6 sm:-mt-8 py-6 sm:py-8 space-y-6 sm:space-y-8">
-                <form action="{{ $link->baseUrl().'/links/' }}" method="POST" class="w-full px-6 space-y-6 sm:px-10 sm:space-y-8">
+                <form action="{{ $link->linkspath() }}" method="POST" class="w-full px-6 space-y-6 sm:px-10 sm:space-y-8">
                     @include('links.partials.form', ['buttonText' => 'Create Link'])
                 </form>
             </div>

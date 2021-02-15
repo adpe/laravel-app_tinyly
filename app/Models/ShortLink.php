@@ -27,7 +27,7 @@ class ShortLink extends Model
 
     public function linkspath()
     {
-        return '/links/';
+        return '/links';
     }
 
     public function baseUrl()
