@@ -15,9 +15,12 @@ class CreateShortLinksTable extends Migration
     {
         Schema::create('short_links', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('owner_id');
             $table->string('code');
             $table->string('link');
             $table->timestamps();
+
+            $table->foreign('owner_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
