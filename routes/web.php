@@ -27,6 +27,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::patch('/links/{link}', [ShortLinkController::class, 'update']);
 });
 
-Auth::routes();
+Auth::routes([
+    'register' => env('AUTH_REGISTER', true),
+]);
 
 Route::get('/{code}', [ShortLinkController::class, 'resolve']);

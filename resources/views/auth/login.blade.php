@@ -62,12 +62,12 @@
 
                     <div class="flex flex-wrap">
                         <button type="submit"
-                        class="w-full select-none font-bold whitespace-no-wrap p-3 rounded-lg text-base leading-normal no-underline text-gray-100 bg-purple-500 hover:bg-purple-700 sm:py-4">
+                        class="w-full select-none font-bold whitespace-no-wrap mb-6 p-3 rounded-lg text-base leading-normal no-underline text-gray-100 bg-purple-500 hover:bg-purple-700 sm:py-4 sm:mb-8">
                             {{ __('Login') }}
                         </button>
 
                         @if (Route::has('register'))
-                        <p class="w-full text-xs text-center text-gray-700 my-6 sm:text-sm sm:my-8">
+                        <p class="w-full text-xs text-center text-gray-700 mb-6 sm:text-sm sm:mb-8">
                             {{ __("Don't have an account?") }}
                             <a class="text-purple-500 hover:text-purple-700 no-underline hover:underline" href="{{ route('register') }}">
                                 {{ __('Register') }}
