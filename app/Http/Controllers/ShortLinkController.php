@@ -82,9 +82,14 @@ class ShortLinkController extends Controller
 
     protected function validateRequest(): array
     {
+        $codeRule = 'required|reserved|';
+        if (request()->isMethod('POST')) {
+            $codeRule .= 'unique:short_links';
+        }
+
         return request()->validate([
             'link' => 'required|url',
-            'code' => 'required|unique:short_links|reserved',
+            'code' => $codeRule,
         ]);
     }
 }
