@@ -20,6 +20,7 @@
                     <tr>
                         <th class="bg-gray-100 border text-left px-4 py-2">{{ __('Code') }}</th>
                         <th class="bg-gray-100 border text-left px-4 py-2">{{ __('URL') }}</th>
+                        <th class="bg-gray-100 border text-left px-4 py-2">{{ __('Views') }}</th>
                         <th class="bg-gray-100 border text-left px-4 py-2">{{ __('Actions') }}</th>
                     </tr>
                     </thead>
@@ -31,6 +32,7 @@
                                                             target="_blank">{{ $shortLink->baseUrl().'/'.$shortLink->code }}</a>
                             </td>
                             <td class="border px-4 py-2">{{ $shortLink->link }}</td>
+                            <td class="border px-4 py-2">{{ $shortLink->views }}</td>
                             <td class="border px-4 py-2">
                                 <span class="flex">
                                     <a href="{{ $shortLink->path().'/edit' }}" class="mr-3">

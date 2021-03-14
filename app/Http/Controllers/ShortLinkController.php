@@ -62,6 +62,8 @@ class ShortLinkController extends Controller
             abort('404');
         }
 
+        $shortLink->increment('views');
+
         return redirect($shortLink->link);
     }
 
