@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Facades\URL;
 
 class ShortLink extends Model
@@ -20,22 +21,32 @@ class ShortLink extends Model
         'link'
     ];
 
-    public function path()
+    /**
+     * Returns the current entry path.
+     *
+     * @return string
+     */
+    public function path(): string
     {
         return '/links/'.$this->id;
     }
 
-    public function linkspath()
-    {
-        return '/links';
-    }
-
-    public function baseUrl()
+    /**
+     * Returns the base path.
+     *
+     * @return string
+     */
+    public function baseUrl(): string
     {
         return URL::to('/');
     }
 
-    public function owner()
+    /**
+     * Checks if actual user is owner of entry.
+     *
+     * @return BelongsTo
+     */
+    public function owner(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }

@@ -3,15 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Models\ShortLink;
-use Illuminate\Http\Request;
+use Illuminate\Auth\Access\AuthorizationException;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\DB;
 
 class ShortLinkController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display the table with all short links.
      *
-     * @return \Illuminate\Http\Response
+     * @return Application|Factory|View
      */
     public function show()
     {
@@ -20,43 +25,13 @@ class ShortLinkController extends Controller
         return view('links.index', compact('shortLinks'));
     }
 
-    public function create(ShortLink $link)
-    {
-        return view('links.create', compact('link'));
-    }
-
     /**
-     * Display a listing of the resource.
+     * Resolves a short link request.
      *
-     * @return \Illuminate\Http\Response
+     * @param  string  $code
+     * @return RedirectResponse
      */
-    public function store()
-    {
-        $link = auth()->user()->short_links()->create($this->validateRequest());
-
-        return redirect($link->linkspath())->with('success', 'The link was created successfully!');
-    }
-
-    public function edit(ShortLink $link)
-    {
-        return view('links.edit', compact('link'));
-    }
-
-    public function update(ShortLink $link)
-    {
-        $this->authorize('update', $link);
-
-        $link->update($this->validateRequest());
-
-        return redirect($link->linkspath())->with('success', 'The link was updated successfully!');
-    }
-
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function resolve($code)
+    public function resolve(string $code): RedirectResponse
     {
         if (!$shortLink = ShortLink::where('code', $code)->first()) {
             abort('404');
@@ -64,9 +39,64 @@ class ShortLinkController extends Controller
 
         $shortLink->increment('views');
 
-        return redirect($shortLink->link);
+        return redirect()->to($shortLink->link);
     }
 
+    /**
+     * Renders the create form.
+     *
+     * @param  ShortLink  $link
+     * @return Application|Factory|View
+     */
+    public function create(ShortLink $link)
+    {
+        $text = 'Create Link';
+
+        return view('links.create', compact('link', 'text'));
+    }
+
+    /**
+     * Renders the edit form.
+     *
+     * @param  ShortLink  $link
+     * @return Application|Factory|View
+     */
+    public function edit(ShortLink $link)
+    {
+        $text = 'Update Link';
+
+        return view('links.edit', compact('link', 'text'));
+    }
+
+    /**
+     * Store new short link entry.
+     *
+     * @param  ShortLink  $link
+     */
+    public function store(ShortLink $link)
+    {
+        $link = auth()->user()->short_links()->create(['link' => $link->link, 'code' => $link->code]);
+    }
+
+    /**
+     * Update existing short link entry.
+     *
+     * @param  ShortLink  $link
+     * @throws AuthorizationException
+     */
+    public function update(ShortLink $link)
+    {
+        $this->authorize('update', $link);
+
+        $link->update();
+    }
+
+    /**
+     * Delete short link entry.
+     *
+     * @param  ShortLink  $link
+     * @return Application|RedirectResponse|Redirector
+     */
     public function delete(ShortLink $link)
     {
         if (!auth()->check()) {
@@ -79,19 +109,8 @@ class ShortLinkController extends Controller
 
         DB::table('short_links')->where('id', '=', $link->id)->delete();
 
-        return redirect('/links')->with('success', 'The link was deleted successfully!');
-    }
+        session()->flash('success_message', 'Link successfully deleted.');
 
-    protected function validateRequest(): array
-    {
-        $codeRule = 'required|reserved|';
-        if (request()->isMethod('POST')) {
-            $codeRule .= 'unique:short_links';
-        }
-
-        return request()->validate([
-            'link' => 'required|url',
-            'code' => $codeRule,
-        ]);
+        return redirect()->to('/links');
     }
 }

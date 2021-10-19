@@ -14,6 +14,7 @@
 
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    <livewire:styles />
 </head>
 <body class="bg-gray-100 h-screen antialiased leading-none font-sans">
 <div id="app" class="flex flex-col h-screen">
@@ -49,14 +50,14 @@
         @yield('content')
     </main>
 
-    @if (Session::has('success'))
+    @if (session('success_message'))
         <div class="alert-toast fixed bottom-0 right-0 m-8 w-5/6 md:w-full max-w-sm">
             <input type="checkbox" class="hidden" id="notification">
 
             <label
                 class="close cursor-pointer flex items-start justify-between w-full p-2 bg-green-500 h-8 rounded shadow-lg text-white"
                 title="close" for="notification">
-                <span class="block sm:inline"><strong class="font-bold">Success!</strong> {{ Session::get('success') }}</span>
+                <span class="block sm:inline"><strong class="font-bold">Success!</strong> {{ session()->get('success_message') }}</span>
 
                 <svg class="fill-current text-white" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
                      viewBox="0 0 18 18">
@@ -74,5 +75,6 @@
         </p>
     </footer>
 </div>
+<livewire:scripts />
 </body>
 </html>
