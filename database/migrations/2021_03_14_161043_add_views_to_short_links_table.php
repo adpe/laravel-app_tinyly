@@ -14,7 +14,10 @@ class AddViewsToShortLinksTable extends Migration
     public function up()
     {
         Schema::table('short_links', function (Blueprint $table) {
-            $table->integer('views')->after('link')->default(0);
+            $table
+                ->integer('views')
+                ->after('link')
+                ->default(0);
         });
     }
 

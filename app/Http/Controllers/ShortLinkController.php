@@ -33,7 +33,7 @@ class ShortLinkController extends Controller
      */
     public function resolve(string $code): RedirectResponse
     {
-        if (!$shortLink = ShortLink::where('code', $code)->first()) {
+        if (!($shortLink = ShortLink::where('code', $code)->first())) {
             abort('404');
         }
 
@@ -75,7 +75,10 @@ class ShortLinkController extends Controller
      */
     public function store(ShortLink $link)
     {
-        $link = auth()->user()->short_links()->create(['link' => $link->link, 'code' => $link->code]);
+        $link = auth()
+            ->user()
+            ->short_links()
+            ->create(['link' => $link->link, 'code' => $link->code]);
     }
 
     /**
@@ -103,11 +106,17 @@ class ShortLinkController extends Controller
             return redirect('/login');
         }
 
-        if (auth()->user()->isNot($link->owner)) {
+        if (
+            auth()
+                ->user()
+                ->isNot($link->owner)
+        ) {
             abort(403);
         }
 
-        DB::table('short_links')->where('id', '=', $link->id)->delete();
+        DB::table('short_links')
+            ->where('id', '=', $link->id)
+            ->delete();
 
         session()->flash('success_message', 'Link successfully deleted.');
 

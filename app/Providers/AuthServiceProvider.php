@@ -13,7 +13,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-         'App\Models\ShortLink' => 'App\Policies\ShortLinkPolicy',
+        'App\Models\ShortLink' => 'App\Policies\ShortLinkPolicy',
     ];
 
     /**

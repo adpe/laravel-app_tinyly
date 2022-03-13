@@ -16,10 +16,7 @@ class ShortLink extends Model
      *
      * @var array
      */
-    protected $fillable = [
-        'code',
-        'link'
-    ];
+    protected $fillable = ['code', 'link'];
 
     /**
      * Returns the current entry path.
@@ -28,7 +25,7 @@ class ShortLink extends Model
      */
     public function path(): string
     {
-        return '/links/'.$this->id;
+        return '/links/' . $this->id;
     }
 
     /**

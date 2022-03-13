@@ -28,7 +28,12 @@ class LoginForm extends Component
     {
         $this->validate();
 
-        if (Auth::attempt(['email' => $this->email, 'password' => $this->password])) {
+        if (
+            Auth::attempt([
+                'email' => $this->email,
+                'password' => $this->password,
+            ])
+        ) {
             session()->flash('success_message', 'Login successfully.');
 
             return redirect()->to('/links');

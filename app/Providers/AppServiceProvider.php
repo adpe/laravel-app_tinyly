@@ -15,7 +15,9 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         if ($this->app->isLocal()) {
-            $this->app->register(\Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class);
+            $this->app->register(
+                \Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class
+            );
         }
     }
 
@@ -26,7 +28,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Validator::extend('reserved', function ($attribute, $value, $parameters, $validator) {
+        Validator::extend('reserved', function (
+            $attribute,
+            $value,
+            $parameters,
+            $validator
+        ) {
             $reservedCodes = ['links', 'login', 'register', 'password'];
 
             return !in_array($value, $reservedCodes);

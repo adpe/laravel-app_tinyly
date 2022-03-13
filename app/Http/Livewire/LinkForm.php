@@ -21,7 +21,8 @@ class LinkForm extends Component
     {
         return [
             'url' => 'required|url',
-            'code' => 'required|reserved|unique:short_links,code,'.$this->link->id,
+            'code' =>
+                'required|reserved|unique:short_links,code,' . $this->link->id,
         ];
     }
 
