@@ -14,7 +14,8 @@
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.75",
         "laravel/tinker": "^2.5",
-        "livewire/livewire": "^2.6"
+        "livewire/livewire": "^2.6",
+        "stechstudio/laravel-php-cs-fixer": "^3.1"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.10",
@@ -53,6 +54,10 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts": {
+        "fix-cs": [
+            "npx prettier app/**/* database/**/* routes/**/* --write",
+            "php artisan fixer:fix"
+        ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"
