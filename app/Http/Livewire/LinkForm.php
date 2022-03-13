@@ -5,7 +5,6 @@ namespace App\Http\Livewire;
 use App\Http\Controllers\ShortLinkController;
 use App\Models\ShortLink;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Str;
 use Livewire\Component;
 
 class LinkForm extends Component
@@ -63,7 +62,7 @@ class LinkForm extends Component
         $this->code = $link->code;
 
         $route = Route::currentRouteAction();
-        if (Str::endsWith($route, 'edit')) {
+        if (str()->endsWith($route, 'edit')) {
             $this->method = 'PATCH';
         }
     }
