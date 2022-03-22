@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\ShortLink;
+use App\Models\User;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -20,7 +21,8 @@ class ShortLinkController extends Controller
      */
     public function show()
     {
-        $shortLinks = auth()->user()->short_links;
+        $user = auth()->user();
+        $shortLinks = User::find($user->id)->short_links;
 
         return view('links.index', compact('shortLinks'));
     }
@@ -34,7 +36,7 @@ class ShortLinkController extends Controller
     public function resolve(string $code): RedirectResponse
     {
         if (!($shortLink = ShortLink::where('code', $code)->first())) {
-            abort('404');
+            abort(404);
         }
 
         $shortLink->increment('views');

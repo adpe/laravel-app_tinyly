@@ -15,6 +15,7 @@ class LinkForm extends Component
     public $message;
     public $text;
     public $method;
+    public $url;
 
     protected function rules()
     {

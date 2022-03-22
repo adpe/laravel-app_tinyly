@@ -10,3 +10,10 @@ parameters:
     level: 5
 
     checkMissingIterableValueType: false
+
+    ignoreErrors:
+        -
+          message: '#Undefined variable: \$this#'
+          path: routes/console.php
+        - '#is not covariant with PHPDoc type class-string#'
+        - '#is not covariant with PHPDoc type array<string> of overridden property#'

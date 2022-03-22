@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -35,7 +35,12 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function short_links()
+    /**
+     * Returns all the users associated short links.
+     *
+     * @return HasMany
+     */
+    public function short_links(): HasMany
     {
         return $this->hasMany(ShortLink::class, 'owner_id')->latest(
             'updated_at'
