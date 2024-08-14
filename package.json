@@ -11,7 +11,6 @@
         "autoprefixer": "^10.4.2",
         "axios": "^1.7.3",
         "laravel-vite-plugin": "^1.0.0",
-        "lodash": "^4.17.19",
         "postcss": "^8.4.31",
         "prettier": "^2.5.1",
         "tailwindcss": "^3.1.0",
