@@ -26,8 +26,8 @@
                         </label>
 
                         <input id="email" type="email"
-                            class="form-input w-full @error('email') border-red-500 @enderror" name="email"
-                            value="{{ old('email') }}" required autocomplete="email" autofocus>
+                            class="form-input w-full rounded-md {{ $errors->has('email') ? 'border-red-500' : 'border-gray-300' }}" name="email"
+                            value="{{ old('email') }}" autocomplete="email" autofocus>
 
                         @error('email')
                         <p class="text-red-500 text-xs italic mt-4">

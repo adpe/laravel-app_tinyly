@@ -5,8 +5,8 @@
             {{ __('E-Mail Address') }}:
         </label>
 
-        <input wire:model="email" id="email" type="text" name="email"
-               class="form-input w-full @error('email') border-red-500 @enderror"
+        <input wire:model="email" id="email" type="email" name="email"
+               class="form-input w-full rounded-md {{ $errors->has('email') ? 'border-red-500' : 'border-gray-300' }}"
                autocomplete="email" autofocus>
 
         @error('email')
@@ -22,7 +22,7 @@
         </label>
 
         <input wire:model="password" id="password" type="password" name="password"
-               class="form-input w-full @error('password') border-red-500 @enderror">
+               class="form-input w-full rounded-md {{ $errors->has('password') ? 'border-red-500' : 'border-gray-300' }}">
 
         @error('password')
         <p class="text-red-500 text-xs italic mt-4">
@@ -34,7 +34,7 @@
     <div class="flex items-center">
         <label class="inline-flex items-center text-sm text-gray-700" for="remember">
             <input wire:model="remember" id="remember" type="checkbox" name="remember"
-                   class="form-checkbox">
+                   class="form-checkbox rounded border-gray-300">
             <span class="ml-2">{{ __('Remember Me') }}</span>
         </label>
 

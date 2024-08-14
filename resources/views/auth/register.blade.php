@@ -19,8 +19,8 @@
                             {{ __('Name') }}:
                         </label>
 
-                        <input id="name" type="text" class="form-input w-full @error('name')  border-red-500 @enderror"
-                            name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                        <input id="name" type="text" class="form-input w-full rounded-md {{ $errors->has('name') ? 'border-red-500' : 'border-gray-300' }}"
+                            name="name" value="{{ old('name') }}" autocomplete="name" autofocus>
 
                         @error('name')
                         <p class="text-red-500 text-xs italic mt-4">
@@ -35,8 +35,8 @@
                         </label>
 
                         <input id="email" type="email"
-                            class="form-input w-full @error('email') border-red-500 @enderror" name="email"
-                            value="{{ old('email') }}" required autocomplete="email">
+                            class="form-input w-full rounded-md {{ $errors->has('email') ? 'border-red-500' : 'border-gray-300' }}" name="email"
+                            value="{{ old('email') }}" autocomplete="email">
 
                         @error('email')
                         <p class="text-red-500 text-xs italic mt-4">
@@ -51,8 +51,8 @@
                         </label>
 
                         <input id="password" type="password"
-                            class="form-input w-full @error('password') border-red-500 @enderror" name="password"
-                            required autocomplete="new-password">
+                            class="form-input w-full rounded-md {{ $errors->has('password') ? 'border-red-500' : 'border-gray-300' }}" name="password"
+                            autocomplete="new-password">
 
                         @error('password')
                         <p class="text-red-500 text-xs italic mt-4">
@@ -66,7 +66,7 @@
                             {{ __('Confirm Password') }}:
                         </label>
 
-                        <input id="password-confirm" type="password" class="form-input w-full"
+                        <input id="password-confirm" type="password" class="form-input w-full rounded-md border-gray-300"
                             name="password_confirmation" required autocomplete="new-password">
                     </div>
 
