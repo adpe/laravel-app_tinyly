@@ -1,4 +1,4 @@
-require('./bootstrap');
+import './bootstrap';
 
 var toast = document.querySelector('.alert-toast input');
 if (toast !== null) {

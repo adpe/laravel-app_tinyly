@@ -9,11 +9,8 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
-    <!-- Styles -->
-    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    <!-- Scripts + Styles -->
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <livewire:styles />
 </head>
 <body class="bg-gray-100 h-screen antialiased leading-none font-sans">
