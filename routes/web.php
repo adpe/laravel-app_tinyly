@@ -15,7 +15,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return redirect('/links');
+    if (auth()->check()) {
+        return redirect('/links');
+    }
+
+    return view('welcome');
 });
 
 Route::group(['middleware' => 'auth'], function () {
