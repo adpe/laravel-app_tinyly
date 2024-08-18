@@ -2,17 +2,14 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
     /**
      * Register any application services.
-     *
-     * @return void
      */
-    public function register()
+    public function register(): void
     {
         if ($this->app->isLocal()) {
             $this->app->register(
@@ -23,20 +20,9 @@ class AppServiceProvider extends ServiceProvider
 
     /**
      * Bootstrap any application services.
-     *
-     * @return void
      */
-    public function boot()
+    public function boot(): void
     {
-        Validator::extend('reserved', function (
-            $attribute,
-            $value,
-            $parameters,
-            $validator
-        ) {
-            $reservedCodes = ['links', 'login', 'register', 'password'];
-
-            return !in_array($value, $reservedCodes);
-        });
+        //
     }
 }
