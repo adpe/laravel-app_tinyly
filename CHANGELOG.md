@@ -1,123 +1,69 @@
 # Release Notes
 
-## [Unreleased](https://github.com/laravel/laravel/compare/v10.3.3...10.x)
+## [Unreleased](https://github.com/laravel/laravel/compare/v11.1.4...11.x)
 
-## [v10.3.3](https://github.com/laravel/laravel/compare/v10.3.2...v10.3.3) - 2024-02-13
+## [v11.1.4](https://github.com/laravel/laravel/compare/v11.1.3...v11.1.4) - 2024-07-16
 
-* Update welcome template by @taylorotwell in https://github.com/laravel/laravel/commit/d3287461e15862d1c7a8f10925988b4f1640d92b
+**Full Changelog**: https://github.com/laravel/laravel/compare/v11.1.3...v11.1.4
 
-## [v10.3.2](https://github.com/laravel/laravel/compare/v10.3.1...v10.3.2) - 2024-01-04
+## [v11.1.3](https://github.com/laravel/laravel/compare/v11.1.2...v11.1.3) - 2024-07-03
 
-* [10.x] Reverts `assertOk` change by [@nunomaduro](https://github.com/nunomaduro) in https://github.com/laravel/laravel/pull/6303
-* Update Axios to latest version by [@u01jmg3](https://github.com/u01jmg3) in https://github.com/laravel/laravel/pull/6306
-* [10.x] Update Axios to latest version by [@u01jmg3](https://github.com/u01jmg3) in https://github.com/laravel/laravel/pull/6313
+* [11.x] Comment maintenance store by [@timacdonald](https://github.com/timacdonald) in https://github.com/laravel/laravel/pull/6429
 
-## [v10.3.1](https://github.com/laravel/laravel/compare/v10.3.0...v10.3.1) - 2023-12-23
+## [v11.1.2](https://github.com/laravel/laravel/compare/v11.1.1...v11.1.2) - 2024-06-20
 
-* [10.x] Add roundrobin transport driver config by [@me-shaon](https://github.com/me-shaon) in https://github.com/laravel/laravel/pull/6301
+* Expose lock table name by [@nhedger](https://github.com/nhedger) in https://github.com/laravel/laravel/pull/6423
 
-## [v10.3.0](https://github.com/laravel/laravel/compare/v10.2.10...v10.3.0) - 2023-12-19
+## [v11.1.1](https://github.com/laravel/laravel/compare/v11.1.0...v11.1.1) - 2024-06-04
 
-* [10.x] Use `assertOk()` instead of `assertStatus(200)` in tests by [@TENIOS](https://github.com/TENIOS) in https://github.com/laravel/laravel/pull/6287
-* [10.x] Vite 5 by [@timacdonald](https://github.com/timacdonald) in https://github.com/laravel/laravel/pull/6292
+* Format the first letter of `drivers`  to lowercase by [@maru0914](https://github.com/maru0914) in https://github.com/laravel/laravel/pull/6413
 
-## [v10.2.10](https://github.com/laravel/laravel/compare/v10.2.9...v10.2.10) - 2023-11-30
+## [v11.1.0](https://github.com/laravel/laravel/compare/v11.0.9...v11.1.0) - 2024-05-28
 
-* [10.x] Fixes missing property description by [@nunomaduro](https://github.com/nunomaduro) in https://github.com/laravel/laravel/pull/6275
-* [10.x] Add partitioned cookie config key by [@fabricecw](https://github.com/fabricecw) in https://github.com/laravel/laravel/pull/6257
+* [11.x] Removes `--dev` dependencies by [@nunomaduro](https://github.com/nunomaduro) in https://github.com/laravel/laravel/pull/6406
 
-## [v10.2.9](https://github.com/laravel/laravel/compare/v10.2.8...v10.2.9) - 2023-11-13
+## [v11.0.9](https://github.com/laravel/laravel/compare/v11.0.8...v11.0.9) - 2024-05-16
 
-- Update axios to latest version by [@emargareten](https://github.com/emargareten) in https://github.com/laravel/laravel/pull/6272
+* Updated SMTP mail config to use a valid EHLO domain by [@rcerljenko](https://github.com/rcerljenko) in https://github.com/laravel/laravel/pull/6402
 
-## [v10.2.8](https://github.com/laravel/laravel/compare/v10.2.7...v10.2.8) - 2023-11-02
+## [v11.0.8](https://github.com/laravel/laravel/compare/v11.0.7...v11.0.8) - 2024-05-13
 
-- Revert "[10.x] Let database handle default collation" by [@taylorotwell](https://github.com/taylorotwell) in https://github.com/laravel/laravel/pull/6266
+* Add .phpactor.json to .gitignore by [@princejohnsantillan](https://github.com/princejohnsantillan) in https://github.com/laravel/laravel/pull/6400
 
-## [v10.2.7](https://github.com/laravel/laravel/compare/v10.2.6...v10.2.7) - 2023-10-31
+## [v11.0.7](https://github.com/laravel/laravel/compare/v11.0.6...v11.0.7) - 2024-05-03
 
-- Postmark mailer configuration update by [@ninjaparade](https://github.com/ninjaparade) in https://github.com/laravel/laravel/pull/6228
-- [10.x] Update sanctum config file by [@ahmed-aliraqi](https://github.com/ahmed-aliraqi) in https://github.com/laravel/laravel/pull/6234
-- [10.x] Let database handle default collation by [@Jubeki](https://github.com/Jubeki) in https://github.com/laravel/laravel/pull/6241
-- [10.x] Increase bcrypt rounds to 12 by [@valorin](https://github.com/valorin) in https://github.com/laravel/laravel/pull/6245
-- [10.x] Use 12 bcrypt rounds for password in UserFactory by [@Jubeki](https://github.com/Jubeki) in https://github.com/laravel/laravel/pull/6247
-- [10.x] Fix typo in the comment for token prefix (sanctum config) by [@yuters](https://github.com/yuters) in https://github.com/laravel/laravel/pull/6248
-- [10.x] Update fixture hash to match testing cost by [@timacdonald](https://github.com/timacdonald) in https://github.com/laravel/laravel/pull/6259
-- [10.x] Update minimum `laravel/sanctum` by [@crynobone](https://github.com/crynobone) in https://github.com/laravel/laravel/pull/6261
-- [10.x] Hash improvements by [@timacdonald](https://github.com/timacdonald) in https://github.com/laravel/laravel/pull/6258
-- Redis maintenance store config example contains an excess space by [@hedge-freek](https://github.com/hedge-freek) in https://github.com/laravel/laravel/pull/6264
+* Remove obsolete driver option by [@u01jmg3](https://github.com/u01jmg3) in https://github.com/laravel/laravel/pull/6395
 
-## [v10.2.6](https://github.com/laravel/laravel/compare/v10.2.5...v10.2.6) - 2023-08-10
+## [v11.0.6](https://github.com/laravel/laravel/compare/v11.0.5...v11.0.6) - 2024-04-09
 
-- Bump `laravel-vite-plugin` to latest version by [@adevade](https://github.com/adevade) in https://github.com/laravel/laravel/pull/6224
+* Fix PHPUnit constraint by [@szepeviktor](https://github.com/szepeviktor) in https://github.com/laravel/laravel/pull/6389
+* [11.x] Add missing roundrobin transport driver config by [@u01jmg3](https://github.com/u01jmg3) in https://github.com/laravel/laravel/pull/6392
 
-## [v10.2.5](https://github.com/laravel/laravel/compare/v10.2.4...v10.2.5) - 2023-06-30
+## [v11.0.5](https://github.com/laravel/laravel/compare/v11.0.4...v11.0.5) - 2024-03-26
 
-- Allow accessing APP_NAME in Vite scope by [@domnantas](https://github.com/domnantas) in https://github.com/laravel/laravel/pull/6204
-- Omit default values for suffix in phpunit.xml by [@spawnia](https://github.com/spawnia) in https://github.com/laravel/laravel/pull/6210
+* [11.x] Use PHPUnit v11 by [@philbates35](https://github.com/philbates35) in https://github.com/laravel/laravel/pull/6385
 
-## [v10.2.4](https://github.com/laravel/laravel/compare/v10.2.3...v10.2.4) - 2023-06-07
+## [v11.0.4](https://github.com/laravel/laravel/compare/v11.0.3...v11.0.4) - 2024-03-15
 
-- Add `precognitive` key to $middlewareAliases by @emargareten in https://github.com/laravel/laravel/pull/6193
+* [11.x] Removed useless null parameter for env helper (cache.php) by [@siarheipashkevich](https://github.com/siarheipashkevich) in https://github.com/laravel/laravel/pull/6374
+* [11.x] Removed useless null parameter for env helper (queue.php) by [@siarheipashkevich](https://github.com/siarheipashkevich) in https://github.com/laravel/laravel/pull/6373
+* [11.x] Fix retry_after to be an integer by [@driesvints](https://github.com/driesvints) in https://github.com/laravel/laravel/pull/6377
+* [11.x] Fix on hover animation and ring by [@michaelnabil230](https://github.com/michaelnabil230) in https://github.com/laravel/laravel/pull/6376
 
-## [v10.2.3](https://github.com/laravel/laravel/compare/v10.2.2...v10.2.3) - 2023-06-01
+## [v11.0.3](https://github.com/laravel/laravel/compare/v11.0.2...v11.0.3) - 2024-03-14
 
-- Update description by @taylorotwell in https://github.com/laravel/laravel/commit/85203d687ebba72b2805b89bba7d18dfae8f95c8
+* [11.x] Revert collation change by [@driesvints](https://github.com/driesvints) in https://github.com/laravel/laravel/pull/6372
 
-## [v10.2.2](https://github.com/laravel/laravel/compare/v10.2.1...v10.2.2) - 2023-05-23
+## [v11.0.2](https://github.com/laravel/laravel/compare/v11.0.1...v11.0.2) - 2024-03-13
 
-- Add lock path by @taylorotwell in https://github.com/laravel/laravel/commit/a6bfbc7f90e33fd6cae3cb23f106c9689858c3b5
+* [11.x] Remove branch alias from composer.json by [@zepfietje](https://github.com/zepfietje) in https://github.com/laravel/laravel/pull/6366
+* [11.x] Fixes typo in welcome page by [@jrd-lewis](https://github.com/jrd-lewis) in https://github.com/laravel/laravel/pull/6363
+* change mariadb default by [@taylorotwell](https://github.com/taylorotwell) in https://github.com/laravel/laravel/commit/79969c99c6456a6d6edfbe78d241575fe1f65594
 
-## [v10.2.1](https://github.com/laravel/laravel/compare/v10.2.0...v10.2.1) - 2023-05-12
+## [v11.0.1](https://github.com/laravel/laravel/compare/v11.0.0...v11.0.1) - 2024-03-12
 
-- Add hashed cast to user password by @emargareten in https://github.com/laravel/laravel/pull/6171
-- Bring back pusher cluster config option by @jesseleite in https://github.com/laravel/laravel/pull/6174
+* [11.x] Fixes SQLite driver missing by [@nunomaduro](https://github.com/nunomaduro) in https://github.com/laravel/laravel/pull/6361
 
-## [v10.2.0](https://github.com/laravel/laravel/compare/v10.1.1...v10.2.0) - 2023-05-05
+## [v11.0.0 (2023-02-17)](https://github.com/laravel/laravel/compare/v10.3.2...v11.0.0)
 
-- Update welcome.blade.php by @aymanatmeh in https://github.com/laravel/laravel/pull/6163
-- Sets package.json type to module by @timacdonald in https://github.com/laravel/laravel/pull/6090
-- Add url support for mail config by @chu121su12 in https://github.com/laravel/laravel/pull/6170
-
-## [v10.1.1](https://github.com/laravel/laravel/compare/v10.0.7...v10.1.1) - 2023-04-18
-
-- Fix laravel/framework constraints for Default Service Providers by @Jubeki in https://github.com/laravel/laravel/pull/6160
-
-## [v10.0.7](https://github.com/laravel/laravel/compare/v10.1.0...v10.0.7) - 2023-04-14
-
-- Adds `phpunit/phpunit@10.1` support by @nunomaduro in https://github.com/laravel/laravel/pull/6155
-
-## [v10.1.0](https://github.com/laravel/laravel/compare/v10.0.6...v10.1.0) - 2023-04-15
-
-- Minor skeleton slimming by @taylorotwell in https://github.com/laravel/laravel/pull/6159
-
-## [v10.0.6](https://github.com/laravel/laravel/compare/v10.0.5...v10.0.6) - 2023-04-05
-
-- Add job batching options to Queue configuration file by @AnOlsen in https://github.com/laravel/laravel/pull/6149
-
-## [v10.0.5](https://github.com/laravel/laravel/compare/v10.0.4...v10.0.5) - 2023-03-08
-
-- Add replace_placeholders to log channels by @alanpoulain in https://github.com/laravel/laravel/pull/6139
-
-## [v10.0.4](https://github.com/laravel/laravel/compare/v10.0.3...v10.0.4) - 2023-02-27
-
-- Fix typo by @izzudin96 in https://github.com/laravel/laravel/pull/6128
-- Specify facility in the syslog driver config by @nicolus in https://github.com/laravel/laravel/pull/6130
-
-## [v10.0.3](https://github.com/laravel/laravel/compare/v10.0.2...v10.0.3) - 2023-02-21
-
-- Remove redundant `@return` docblock in UserFactory by @datlechin in https://github.com/laravel/laravel/pull/6119
-- Reverts change in asset helper by @timacdonald in https://github.com/laravel/laravel/pull/6122
-
-## [v10.0.2](https://github.com/laravel/laravel/compare/v10.0.1...v10.0.2) - 2023-02-16
-
-- Remove unneeded call by @taylorotwell in https://github.com/laravel/laravel/commit/3986d4c54041fd27af36f96cf11bd79ce7b1ee4e
-
-## [v10.0.1](https://github.com/laravel/laravel/compare/v10.0.0...v10.0.1) - 2023-02-15
-
-- Add PHPUnit result cache to gitignore by @itxshakil in https://github.com/laravel/laravel/pull/6105
-- Allow php-http/discovery as a composer plugin by @nicolas-grekas in https://github.com/laravel/laravel/pull/6106
-
-## [v10.0.0 (2022-02-14)](https://github.com/laravel/laravel/compare/v9.5.2...v10.0.0)
-
-Laravel 10 includes a variety of changes to the application skeleton. Please consult the diff to see what's new.
+Laravel 11 includes a variety of changes to the application skeleton. Please consult the diff to see what's new.
