@@ -10,6 +10,7 @@ use Livewire\Component;
 
 class LinkForm extends Component
 {
+    public $url;
     public $link;
     public $slug;
     public $code;
