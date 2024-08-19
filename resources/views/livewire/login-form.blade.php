@@ -1,11 +1,11 @@
-<form wire:submit.prevent="submit" class="w-full px-6 space-y-6 sm:px-10 sm:space-y-8">
+<form wire:submit="submit" class="w-full px-6 space-y-6 sm:px-10 sm:space-y-8">
     @csrf
     <div class="flex flex-wrap">
         <label for="email" class="block text-gray-700 text-sm font-bold mb-2 sm:mb-4">
             {{ __('E-Mail Address') }}:
         </label>
 
-        <input wire:model="email" id="email" type="email" name="email"
+        <input wire:model.live="email" id="email" type="email" name="email"
                class="form-input w-full rounded-md {{ $errors->has('email') ? 'border-red-500' : 'border-gray-300' }}"
                autocomplete="email" autofocus>
 
@@ -21,7 +21,7 @@
             {{ __('Password') }}:
         </label>
 
-        <input wire:model="password" id="password" type="password" name="password"
+        <input wire:model.live="password" id="password" type="password" name="password"
                class="form-input w-full rounded-md {{ $errors->has('password') ? 'border-red-500' : 'border-gray-300' }}">
 
         @error('password')
@@ -33,7 +33,7 @@
 
     <div class="flex items-center">
         <label class="inline-flex items-center text-sm text-gray-700" for="remember">
-            <input wire:model="remember" id="remember" type="checkbox" name="remember"
+            <input wire:model.live="remember" id="remember" type="checkbox" name="remember"
                    class="form-checkbox rounded border-gray-300">
             <span class="ml-2">{{ __('Remember Me') }}</span>
         </label>

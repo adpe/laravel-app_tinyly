@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Livewire;
 
 use App\Http\Controllers\ShortLinkController;
 use App\Models\ShortLink;
@@ -10,6 +10,7 @@ use Livewire\Component;
 
 class LinkForm extends Component
 {
+    public $url;
     public $link;
     public $slug;
     public $code;
