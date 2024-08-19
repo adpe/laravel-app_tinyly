@@ -1,11 +1,11 @@
-<form wire:submit.prevent="submit" class="w-full px-6 space-y-6 sm:px-8 sm:space-y-8">
+<form wire:submit="submit" class="w-full px-6 space-y-6 sm:px-8 sm:space-y-8">
     @csrf
     <div class="flex flex-wrap">
         <label for="link" class="block text-gray-700 text-sm font-bold mb-2 sm:mb-4">
             {{ __('URL') }}:
         </label>
 
-        <input wire:model="url" id="url" type="text" class="form-input w-full @error('url')  border-red-500 @enderror"
+        <input wire:model.live="url" id="url" type="text" class="form-input w-full @error('url')  border-red-500 @enderror"
                name="slug" value="{{ $url ?? old('url') }}" autocomplete="url" autofocus>
 
         @error('url')
@@ -20,7 +20,7 @@
             {{ __('Code') }}:
         </label>
 
-        <input wire:model="code" id="code" type="text" class="form-input w-full @error('code')  border-red-500 @enderror"
+        <input wire:model.live="code" id="code" type="text" class="form-input w-full @error('code')  border-red-500 @enderror"
                name="code" value="{{ $code ?? old('code') }}" autocomplete="code" autofocus>
 
         @error('code')
