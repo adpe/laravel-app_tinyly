@@ -4,10 +4,10 @@ use App\Http\Controllers\ShortLinkController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    if (auth()->check()) {
-        return redirect('/links');
-    }
+    return redirect('/links');
+});
 
+Route::get('/welcome', function () {
     return view('welcome');
 });
 
