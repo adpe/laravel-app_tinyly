@@ -34,7 +34,7 @@
     <div class="flex items-center">
         <label class="inline-flex items-center text-sm text-gray-700" for="remember">
             <input wire:model.live="remember" id="remember" type="checkbox" name="remember"
-                   class="form-checkbox rounded border-gray-300">
+                   class="form-checkbox rounded-sm border-gray-300">
             <span class="ml-2">{{ __('Remember Me') }}</span>
         </label>
 

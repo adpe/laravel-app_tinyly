@@ -6,13 +6,13 @@
         <div class="w-full">
 
             @if (session('status'))
-            <div class="text-sm text-green-700 bg-green-100 px-5 py-6 sm:rounded sm:border sm:border-green-400 sm:mb-6"
+            <div class="text-sm text-green-700 bg-green-100 px-5 py-6 sm:rounded-sm sm:border sm:border-green-400 sm:mb-6"
                 role="alert">
                 {{ session('status') }}
             </div>
             @endif
 
-            <section class="flex flex-col break-words bg-white sm:border-1 sm:rounded-md sm:shadow-sm sm:shadow-lg">
+            <section class="flex flex-col wrap-break-word bg-white sm:border sm:rounded-md sm:shadow-xs sm:shadow-lg">
                 <header class="font-semibold bg-gray-200 text-gray-700 py-5 px-6 sm:py-6 sm:px-8 sm:rounded-t-md">
                     {{ __('Reset Password') }}
                 </header>
