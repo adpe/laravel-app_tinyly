@@ -6,13 +6,13 @@
         <div class="w-full">
 
             @if (session('resent'))
-            <div class="text-sm border border-t-8 rounded text-green-700 border-green-600 bg-green-100  px-3 py-4 mb-4"
+            <div class="text-sm border border-t-8 rounded-sm text-green-700 border-green-600 bg-green-100  px-3 py-4 mb-4"
                 role="alert">
                 {{ __('A fresh verification link has been sent to your email address.') }}
             </div>
             @endif
 
-            <section class="flex flex-col break-words bg-white sm:border-1 sm:rounded-md sm:shadow-sm sm:shadow-lg">
+            <section class="flex flex-col wrap-break-word bg-white sm:border sm:rounded-md sm:shadow-xs sm:shadow-lg">
                 <header class="font-semibold bg-gray-200 text-gray-700 py-5 px-6 sm:py-6 sm:px-8 sm:rounded-t-md">
                     {{ __('Verify Your Email Address') }}
                 </header>

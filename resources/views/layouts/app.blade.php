@@ -52,7 +52,7 @@
             <input type="checkbox" class="hidden" id="notification">
 
             <label
-                class="close cursor-pointer flex items-start justify-between w-full p-2 bg-green-500 h-8 rounded shadow-lg text-white"
+                class="close cursor-pointer flex items-start justify-between w-full p-2 bg-green-500 h-8 rounded-sm shadow-lg text-white"
                 title="close" for="notification">
                 <span class="block sm:inline"><strong class="font-bold">Success!</strong> {{ session()->get('success_message') }}</span>
 
@@ -70,7 +70,7 @@
             <input type="checkbox" class="hidden" id="notification">
 
             <label
-                class="close cursor-pointer flex items-start justify-between w-full p-2 bg-red-500 h-8 rounded shadow-lg text-white"
+                class="close cursor-pointer flex items-start justify-between w-full p-2 bg-red-500 h-8 rounded-sm shadow-lg text-white"
                 title="close" for="notification">
                 <span class="block sm:inline"><strong class="font-bold">Error!</strong> {{ session()->get('error_message') }}</span>
 
