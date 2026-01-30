@@ -1,4 +1,4 @@
-<form wire:submit="submit" class="w-full px-6 space-y-6 sm:px-8 sm:space-y-8">
+<form wire:submit="submit" class="w-full px-6 space-y-6 sm:px-8 sm:space-y-8 mt-6 sm:mt-8">
     @csrf
     <div class="flex flex-wrap">
         <label for="link" class="block text-gray-700 text-sm font-bold mb-2 sm:mb-4">
@@ -32,7 +32,7 @@
 
     <div class="flex flex-wrap">
         <button type="submit"
-                class="w-full select-none font-bold whitespace-no-wrap p-3 rounded-lg text-base leading-normal no-underline text-gray-100 bg-purple-500 hover:bg-purple-700 sm:py-4">
+                class="w-full select-none font-bold whitespace-nowrap p-3 rounded-lg text-base leading-normal no-underline text-gray-100 bg-purple-500 hover:bg-purple-700 sm:py-4">
             {{ $text }}
         </button>
     </div>

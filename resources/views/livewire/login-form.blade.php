@@ -1,6 +1,6 @@
 <form wire:submit="submit" class="w-full px-6 space-y-6 sm:px-10 sm:space-y-8">
     @csrf
-    <div class="flex flex-wrap">
+    <div class="flex flex-wrap mt-6 sm:mt-8">
         <label for="email" class="block text-gray-700 text-sm font-bold mb-2 sm:mb-4">
             {{ __('E-Mail Address') }}:
         </label>
@@ -39,7 +39,7 @@
         </label>
 
         @if (Route::has('password.request'))
-            <a class="text-sm text-purple-500 hover:text-purple-700 whitespace-no-wrap no-underline hover:underline ml-auto"
+            <a class="text-sm text-purple-500 hover:text-purple-700 whitespace-nowrap no-underline hover:underline ml-auto"
                href="{{ route('password.request') }}">
                 {{ __('Forgot Your Password?') }}
             </a>
@@ -48,7 +48,7 @@
 
     <div class="flex flex-wrap">
         <button type="submit"
-                class="w-full select-none font-bold whitespace-no-wrap mb-6 p-3 rounded-lg text-base leading-normal no-underline text-gray-100 bg-purple-500 hover:bg-purple-700 sm:py-4 sm:mb-8">
+                class="w-full select-none font-bold whitespace-nowrap mb-6 p-3 rounded-lg text-base leading-normal no-underline text-gray-100 bg-purple-500 hover:bg-purple-700 sm:py-4 sm:mb-8">
             {{ __('Login') }}
         </button>
 

@@ -56,7 +56,7 @@
                 title="close" for="notification">
                 <span class="block sm:inline"><strong class="font-bold">Success!</strong> {{ session()->get('success_message') }}</span>
 
-                <svg class="fill-current text-white" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                <svg class="fill-current text-white size-[18px]" xmlns="http://www.w3.org/2000/svg"
                      viewBox="0 0 18 18">
                     <path
                         d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
@@ -74,7 +74,7 @@
                 title="close" for="notification">
                 <span class="block sm:inline"><strong class="font-bold">Error!</strong> {{ session()->get('error_message') }}</span>
 
-                <svg class="fill-current text-white" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                <svg class="fill-current text-white size-[18px]" xmlns="http://www.w3.org/2000/svg"
                      viewBox="0 0 18 18">
                     <path
                         d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
