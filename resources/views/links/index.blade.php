@@ -2,7 +2,7 @@
 
 @section('content')
     <main class="mt-6 sm:mt-10">
-        <section class="flex flex-col wrap-break-word bg-white sm:border sm:rounded-md sm:shadow-xs sm:shadow-lg">
+        <section class="flex flex-col break-words bg-white sm:border sm:rounded-md sm:shadow-lg">
 
             <header class="font-semibold bg-gray-200 text-gray-700 py-5 px-6 sm:py-6 sm:px-8 sm:rounded-t-md">
                 My Links
@@ -11,7 +11,7 @@
             <div class="px-6 py-6 sm:py-8 space-y-6 sm:px-10 sm:space-y-8">
                 <div class="flex flex-wrap mb-8 float-right">
                     <a href="/links/create"
-                       class="select-none font-bold whitespace-no-wrap p-3 rounded-lg text-base leading-normal no-underline text-gray-100 bg-purple-500 hover:bg-purple-700 sm:py-4">Create
+                       class="select-none font-bold whitespace-nowrap p-3 rounded-lg text-base leading-normal no-underline text-gray-100 bg-purple-500 hover:bg-purple-700 sm:py-4">Create
                         Link</a>
                 </div>
 
@@ -36,7 +36,7 @@
                             <td class="border px-4 py-2">
                                 <span class="flex">
                                     <a href="{{ $shortLink->path().'/edit' }}" class="mr-3">
-                                        <svg class="h-6 w-6 text-gray-500 hover:text-purple-500" xmlns="http://www.w3.org/2000/svg"
+                                        <svg class="size-6 text-gray-500 hover:text-purple-500" xmlns="http://www.w3.org/2000/svg"
                                              fill="none"
                                              viewBox="0 0 24 24"
                                              stroke="currentColor">
@@ -45,7 +45,7 @@
                                         </svg>
                                     </a>
                                     <a href="{{ $shortLink->path().'/delete' }}">
-                                        <svg class="h-6 w-6 text-gray-500 hover:text-purple-500" xmlns="http://www.w3.org/2000/svg"
+                                        <svg class="size-6 text-gray-500 hover:text-purple-500" xmlns="http://www.w3.org/2000/svg"
                                              fill="none"
                                              viewBox="0 0 24 24"
                                              stroke="currentColor">

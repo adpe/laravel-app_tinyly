@@ -4,7 +4,7 @@
 <main class="mt-6 sm:container sm:mx-auto sm:max-w-lg sm:mt-10">
     <div class="flex">
         <div class="w-full">
-            <section class="flex flex-col wrap-break-word bg-white sm:border sm:rounded-md sm:shadow-xs sm:shadow-lg">
+            <section class="flex flex-col break-words bg-white sm:border sm:rounded-md sm:shadow-lg">
 
                 <header class="font-semibold bg-gray-200 text-gray-700 py-5 px-6 sm:py-6 sm:px-8 sm:rounded-t-md">
                     {{ __('Reset Password') }}
@@ -58,7 +58,7 @@
 
                     <div class="flex flex-wrap pb-8 sm:pb-10">
                         <button type="submit"
-                        class="w-full select-none font-bold whitespace-no-wrap p-3 rounded-lg text-base leading-normal no-underline text-gray-100 bg-purple-500 hover:bg-purple-700 sm:py-4">
+                        class="w-full select-none font-bold whitespace-nowrap p-3 rounded-lg text-base leading-normal no-underline text-gray-100 bg-purple-500 hover:bg-purple-700 sm:py-4">
                             {{ __('Reset Password') }}
                         </button>
                     </div>

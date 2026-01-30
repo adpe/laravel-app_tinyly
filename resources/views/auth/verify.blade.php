@@ -12,19 +12,19 @@
             </div>
             @endif
 
-            <section class="flex flex-col wrap-break-word bg-white sm:border sm:rounded-md sm:shadow-xs sm:shadow-lg">
+            <section class="flex flex-col break-words bg-white sm:border sm:rounded-md sm:shadow-lg">
                 <header class="font-semibold bg-gray-200 text-gray-700 py-5 px-6 sm:py-6 sm:px-8 sm:rounded-t-md">
                     {{ __('Verify Your Email Address') }}
                 </header>
 
-                <div class="w-full flex flex-wrap text-gray-700 leading-normal text-sm p-6 space-y-4 sm:text-base sm:space-y-6">
+                <div class="w-full flex flex-wrap text-gray-700 leading-normal text-sm p-6 space-y-4 sm:text-base sm:space-y-6 mt-6 sm:mt-8">
                     <p>
                         {{ __('Before proceeding, please check your email for a verification link.') }}
                     </p>
 
                     <p>
                         {{ __('If you did not receive the email') }}, <a
-                            class="text-purple-500 hover:purple-blue-700 no-underline hover:underline cursor-pointer"
+                            class="text-purple-500 hover:text-purple-700 no-underline hover:underline cursor-pointer"
                             onclick="event.preventDefault(); document.getElementById('resend-verification-form').submit();">{{ __('click here to request another') }}</a>.
                     </p>
 
