@@ -40,6 +40,7 @@ jobs:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         SOURCE: "."
         TARGET: "/var/www/html/aka.adrianperez.me"
+        EXCLUDE: "/storage/, /.env, /node_modules/, /.git/, /.github/, /tests/"
 
     - name: Run SSH Remote Commands
       uses: appleboy/ssh-action@v1.0.3
