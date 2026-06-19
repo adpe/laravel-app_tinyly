@@ -1,0 +1,3 @@
+# Polymarket CLOB execution sidecar dependencies.
+# Install with:  pip install -r sidecar/requirements.txt
+py-clob-client>=0.17

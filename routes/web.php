@@ -1,11 +1,16 @@
 <?php
 
 use App\Http\Controllers\ShortLinkController;
+use App\Http\Controllers\TelegramWebhookController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return redirect('/links');
 });
+
+// Polymarket bot control via Telegram. The {secret} segment authenticates the
+// caller; see config/polymarket.php (telegram.webhook_secret).
+Route::post('/telegram/webhook/{secret}', TelegramWebhookController::class);
 
 Route::get('/welcome', function () {
     return view('welcome');
